@@ -3,6 +3,7 @@ import axios from "axios";
 import { Chart } from "chart.js";
 import React from "react";
 import Statistics from "./Statistics"
+import Header from "../Header";
 const App = () => {
 const fetchUsers= async()=>{
 const response = await axios.get('https://jsonplaceholder.typicode.com/users')
@@ -17,6 +18,7 @@ return response.data
   if (error) return <div>Sorry something went wrong</div>
   return (
     <div>
+      <Header/>
      {data.map((user)=>(
       <div key={user.id} >
 <p>{user.name}</p>
